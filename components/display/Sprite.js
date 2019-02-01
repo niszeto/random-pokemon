@@ -5,8 +5,8 @@ const Sprite = props => {
   const { sprite } = props;
 
   return (
-    <View>
-      <Image style={{ height: 250, width: 250 }} source={{ uri: sprite }} />
+    <View style={{ backgroundColor: "black" }}>
+      <Image style={{ height: 300, width: 350 }} source={{ uri: sprite }} />
     </View>
   );
 };

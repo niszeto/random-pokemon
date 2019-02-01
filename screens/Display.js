@@ -8,6 +8,10 @@ import PokedexNumber from "../components/display/PokedexNumber";
 
 import Sprite from "../components/display/Sprite";
 
+import Types from "../components/display/Types";
+
+import Abilities from "../components/display/Abilities";
+
 class Display extends React.Component {
   constructor(props) {
     super(props);
@@ -39,12 +43,21 @@ class Display extends React.Component {
         <View style={styles.spriteContainer}>
           <Sprite sprite={front_default} />
         </View>
+
+        <View style={styles.typesStyle}>
+          <Types types={types.reverse()} />
+        </View>
+
+        {/* row style */}
+        <View style={styles.typesStyle}>
+          <Abilities abilities={abilities.reverse()} />
+        </View>
       </View>
     );
   };
 
   async componentDidMount() {
-    const response = await fetch("https://pokeapi.co/api/v2/pokemon/3/");
+    const response = await fetch("https://pokeapi.co/api/v2/pokemon/6/");
 
     const responseJson = await response.json();
 
@@ -71,12 +84,16 @@ const styles = StyleSheet.create({
     height: 75,
     width: "100%",
     flexDirection: "row",
-    justifyContent: "space-between",
+    justifyContent: "space-around",
     alignItems: "center",
     backgroundColor: "yellow"
   },
 
-  spriteContainer: {}
+  spriteContainer: {},
+
+  typesStyle: {
+    flexDirection: "row"
+  }
 });
 
 export default Display;
