@@ -1,5 +1,5 @@
 import React from "react";
-import { View, ScrollView, StyleSheet } from "react-native";
+import { View, ScrollView, StyleSheet, RefreshControl } from "react-native";
 
 import Loading from "./Loading";
 
@@ -26,6 +26,14 @@ class Display extends React.Component {
     };
   }
 
+  onRefresh = async () => {
+    this.setState({ isLoading: true });
+
+    const pokemonData = await getRandomPokemonData();
+
+    this.setState({ isLoading: false, data: pokemonData });
+  };
+
   displayData = () => {
     const {
       name,
@@ -39,7 +47,15 @@ class Display extends React.Component {
     } = this.state.data;
 
     return (
-      <ScrollView contentContainerStyle={styles.container}>
+      <ScrollView
+        contentContainerStyle={styles.container}
+        refreshControl={
+          <RefreshControl
+            refreshing={this.state.isLoading}
+            onRefresh={this.onRefresh}
+          />
+        }
+      >
         <View style={styles.headerContainer}>
           <Name name={name} />
           <PokedexNumber number={id} />
@@ -66,9 +82,7 @@ class Display extends React.Component {
   };
 
   async componentDidMount() {
-    const pokemonData = await getRandomPokemonData();
-
-    this.setState({ isLoading: false, data: pokemonData });
+    this.onRefresh();
   }
 
   render() {
