@@ -12,6 +12,9 @@ import Types from "../components/display/Types";
 
 import Abilities from "../components/display/Abilities";
 
+import Weight from "../components/display/Weight";
+import Height from "../components/display/Height";
+
 class Display extends React.Component {
   constructor(props) {
     super(props);
@@ -33,6 +36,8 @@ class Display extends React.Component {
       stats
     } = this.state.data;
 
+    console.log(stats);
+
     return (
       <View style={styles.container}>
         <View style={styles.headerContainer}>
@@ -52,6 +57,9 @@ class Display extends React.Component {
         <View style={styles.typesStyle}>
           <Abilities abilities={abilities.reverse()} />
         </View>
+
+        <Weight weight={weight} />
+        <Height height={height} />
       </View>
     );
   };
