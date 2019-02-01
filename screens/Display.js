@@ -1,5 +1,5 @@
 import React from "react";
-import { View, FlatList, StyleSheet } from "react-native";
+import { View, ScrollView, StyleSheet } from "react-native";
 
 import Loading from "./Loading";
 
@@ -39,7 +39,7 @@ class Display extends React.Component {
     } = this.state.data;
 
     return (
-      <View style={styles.container}>
+      <ScrollView contentContainerStyle={styles.container}>
         <View style={styles.headerContainer}>
           <Name name={name} />
           <PokedexNumber number={id} />
@@ -61,7 +61,7 @@ class Display extends React.Component {
           <Weight weight={weight} />
           <Height height={height} />
         </View>
-      </View>
+      </ScrollView>
     );
   };
 
