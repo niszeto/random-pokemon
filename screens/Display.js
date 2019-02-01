@@ -1,7 +1,9 @@
 import React from "react";
-import { View, Text, Image, StyleSheet } from "react-native";
+import { View, FlatList, StyleSheet } from "react-native";
 
 import Loading from "./Loading";
+
+import getRandomPokemonData from "../functions/getRandomPokemonData";
 
 import Name from "../components/display/Name";
 import PokedexNumber from "../components/display/PokedexNumber";
@@ -36,8 +38,6 @@ class Display extends React.Component {
       stats
     } = this.state.data;
 
-    console.log(stats);
-
     return (
       <View style={styles.container}>
         <View style={styles.headerContainer}>
@@ -53,23 +53,22 @@ class Display extends React.Component {
           <Types types={types.reverse()} />
         </View>
 
-        {/* row style */}
         <View style={styles.typesStyle}>
           <Abilities abilities={abilities.reverse()} />
         </View>
 
-        <Weight weight={weight} />
-        <Height height={height} />
+        <View style={styles.typesStyle}>
+          <Weight weight={weight} />
+          <Height height={height} />
+        </View>
       </View>
     );
   };
 
   async componentDidMount() {
-    const response = await fetch("https://pokeapi.co/api/v2/pokemon/6/");
+    const pokemonData = await getRandomPokemonData();
 
-    const responseJson = await response.json();
-
-    this.setState({ isLoading: false, data: responseJson });
+    this.setState({ isLoading: false, data: pokemonData });
   }
 
   render() {
@@ -89,7 +88,7 @@ const styles = StyleSheet.create({
   },
 
   headerContainer: {
-    height: 75,
+    height: 300,
     width: "100%",
     flexDirection: "row",
     justifyContent: "space-around",
@@ -100,7 +99,12 @@ const styles = StyleSheet.create({
   spriteContainer: {},
 
   typesStyle: {
-    flexDirection: "row"
+    height: 150,
+    width: "100%",
+    flexDirection: "row",
+    justifyContent: "space-around",
+    alignItems: "center",
+    backgroundColor: "yellow"
   }
 });
 
