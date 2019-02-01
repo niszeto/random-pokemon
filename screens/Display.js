@@ -102,7 +102,7 @@ const styles = StyleSheet.create({
   },
 
   headerContainer: {
-    height: 300,
+    height: 100,
     width: "100%",
     flexDirection: "row",
     justifyContent: "space-around",
@@ -113,7 +113,7 @@ const styles = StyleSheet.create({
   spriteContainer: {},
 
   typesStyle: {
-    height: 150,
+    height: 50,
     width: "100%",
     flexDirection: "row",
     justifyContent: "space-around",

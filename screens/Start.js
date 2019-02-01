@@ -10,13 +10,18 @@ const Start = props => {
 
       <Text>Who's That Pokemon?</Text>
 
-      <Button title="Catch" onPress={() => console.log("pressed")} />
+      <Button title="Catch" onPress={() => display(props)} />
     </View>
   );
 };
 
+display = props => {
+  return props.navigation.navigate("Display");
+};
+
 const styles = StyleSheet.create({
   container: {
+    flex: 1,
     justifyContent: "center",
     alignItems: "center"
   },

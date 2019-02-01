@@ -1,21 +1,17 @@
 import React from "react";
 import { StyleSheet, Text, View } from "react-native";
+import { createAppContainer } from "react-navigation";
+import RootSwitch from "./navigation/RootSwitch";
 
-import Loading from "./screens/Loading";
-import Start from "./screens/Start";
-import Display from "./screens/Display";
+const AppContainer = createAppContainer(RootSwitch);
 
-export default class App extends React.Component {
+class App extends React.Component {
   render() {
-    return (
-      <View style={styles.container}>
-        {/* <Loading /> */}
-        {/* <Start /> */}
-        <Display />
-      </View>
-    );
+    return <AppContainer />;
   }
 }
+
+export default App;
 
 const styles = StyleSheet.create({
   container: {
