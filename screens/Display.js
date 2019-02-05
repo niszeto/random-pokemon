@@ -26,7 +26,7 @@ class Display extends React.Component {
     };
   }
 
-  onRefresh = async () => {
+  getPokemon = async () => {
     this.setState({ isLoading: true });
 
     const pokemonData = await getRandomPokemonData();
@@ -52,7 +52,7 @@ class Display extends React.Component {
         refreshControl={
           <RefreshControl
             refreshing={this.state.isLoading}
-            onRefresh={this.onRefresh}
+            onRefresh={this.getPokemon}
           />
         }
       >
@@ -82,7 +82,7 @@ class Display extends React.Component {
   };
 
   async componentDidMount() {
-    this.onRefresh();
+    this.getPokemon();
   }
 
   render() {
@@ -97,8 +97,7 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: "center",
     alignItems: "center",
-    width: "100%",
-    backgroundColor: "red"
+    width: "100%"
   },
 
   headerContainer: {
