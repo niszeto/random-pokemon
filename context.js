@@ -3,7 +3,6 @@ import React from "react";
 export const Context = React.createContext();
 
 const reducer = (state, action) => {
-  console.log(action);
   switch (action.type) {
     case "CHANGE_GENERATION":
       return {
@@ -28,8 +27,7 @@ export class Provider extends React.Component {
     this.state = {
       generation: "All",
       startRange: 1,
-      endRange: 5,
-      // endRange: 803,
+      endRange: 803,
       dispatch: action => this.setState(state => reducer(state, action))
     };
   }
@@ -39,6 +37,7 @@ export class Provider extends React.Component {
   componentDidMount() {}
 
   render() {
+    console.log(this.state);
     return (
       <Context.Provider value={this.state}>
         {this.props.children}
