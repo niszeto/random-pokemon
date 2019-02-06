@@ -1,5 +1,11 @@
 import React from "react";
-import { View, ScrollView, StyleSheet, RefreshControl } from "react-native";
+import {
+  View,
+  ScrollView,
+  StyleSheet,
+  RefreshControl,
+  Button
+} from "react-native";
 
 import Loading from "./Loading";
 
@@ -25,6 +31,30 @@ class Display extends React.Component {
       data: {}
     };
   }
+
+  static navigationOptions = ({ navigation }) => {
+    return {
+      headerTitle: "Pokemon",
+      headerStyle: {
+        backgroundColor: "#F8EE5F"
+      },
+
+      headerTitleStyle: {
+        fontWeight: "bold",
+        fontSize: 20,
+        color: "white"
+      },
+      headerTintColor: "white",
+      headerRight: (
+        <Button
+          title="Settings"
+          onPress={() => {
+            navigation.navigate("Settings");
+          }}
+        />
+      )
+    };
+  };
 
   getPokemon = async () => {
     this.setState({ isLoading: true });

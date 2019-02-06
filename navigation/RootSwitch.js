@@ -1,12 +1,12 @@
 import { createSwitchNavigator } from "react-navigation";
 
 import StartScreen from "../screens/Start";
-import ApplicationStack from "../navigation/ApplicationStack";
+import RootStack from "./RootStack";
 
 const RootSwitch = createSwitchNavigator(
   {
     Start: StartScreen,
-    Application: ApplicationStack
+    Root: RootStack
   },
   {
     initialRouteName: "Start"
