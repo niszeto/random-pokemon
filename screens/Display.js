@@ -125,8 +125,8 @@ class Display extends React.Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: "center",
-    alignItems: "center",
+    // justifyContent: "center",
+    // alignItems: "center",
     width: "100%"
   },
 
@@ -139,7 +139,9 @@ const styles = StyleSheet.create({
     backgroundColor: "yellow"
   },
 
-  spriteContainer: {},
+  spriteContainer: {
+    alignItems: "center"
+  },
 
   typesStyle: {
     height: 50,

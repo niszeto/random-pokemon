@@ -1,5 +1,6 @@
 import React from "react";
 import { View, Text, StyleSheet, Picker, Button } from "react-native";
+import GenerationPicker from "../components/settings/GenerationPicker";
 
 class Settings extends React.Component {
   constructor(props) {
@@ -24,7 +25,7 @@ class Settings extends React.Component {
       headerTintColor: "white",
       headerLeft: (
         <Button
-          title="Settings"
+          title="Pokemon"
           onPress={() => {
             navigation.navigate("Display");
           }}
@@ -38,7 +39,7 @@ class Settings extends React.Component {
   render() {
     return (
       <View style={styles.container}>
-        <Text>Settings</Text>
+        <GenerationPicker />
       </View>
     );
   }
@@ -46,9 +47,9 @@ class Settings extends React.Component {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    justifyContent: "center",
-    alignItems: "center"
+    flex: 1
+    // justifyContent: "center",
+    // alignItems: "center"
   }
 });
 
