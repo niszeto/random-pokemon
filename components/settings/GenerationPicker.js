@@ -1,26 +1,31 @@
 import React from "react";
 import { View, StyleSheet, Picker } from "react-native";
+import GenerationRanges from "../../assets/GenerationRanges";
 
 class GenerationPicker extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      generation: "all"
+      generation: "All"
     };
   }
 
   render() {
+    let pickerItems = GenerationRanges.map(currentGeneration => {
+      const { generation, id } = currentGeneration;
+
+      return <Picker.Item label={generation} value={generation} key={id} />;
+    });
+
     return (
       <Picker
         selectedValue={this.state.generation}
         style={{ height: 300, width: "100%", backgroundColor: "red" }}
         onValueChange={(itemValue, itemIndex) => {
-          console.log(itemValue);
           this.setState({ generation: itemValue });
         }}
       >
-        <Picker.Item label="All" value="all" />
-        <Picker.Item label="1" value="one" />
+        {pickerItems}
       </Picker>
     );
   }
