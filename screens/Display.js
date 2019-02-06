@@ -23,6 +23,8 @@ import Abilities from "../components/display/Abilities";
 import Weight from "../components/display/Weight";
 import Height from "../components/display/Height";
 
+import { Consumer } from "../context";
+
 class Display extends React.Component {
   constructor(props) {
     super(props);
@@ -32,34 +34,16 @@ class Display extends React.Component {
     };
   }
 
-  static navigationOptions = ({ navigation }) => {
-    return {
-      headerTitle: "Pokemon",
-      headerStyle: {
-        backgroundColor: "#F8EE5F"
-      },
-
-      headerTitleStyle: {
-        fontWeight: "bold",
-        fontSize: 20,
-        color: "white"
-      },
-      headerTintColor: "white",
-      headerRight: (
-        <Button
-          title="Settings"
-          onPress={() => {
-            navigation.navigate("Settings");
-          }}
-        />
-      )
-    };
-  };
+  componentDidMount() {
+    this.getPokemon();
+  }
 
   getPokemon = async () => {
     this.setState({ isLoading: true });
 
-    const pokemonData = await getRandomPokemonData();
+    const { startRange, endRange } = this.props.value;
+
+    const pokemonData = await getRandomPokemonData(startRange, endRange);
 
     this.setState({ isLoading: false, data: pokemonData });
   };
@@ -111,10 +95,6 @@ class Display extends React.Component {
     );
   };
 
-  async componentDidMount() {
-    this.getPokemon();
-  }
-
   render() {
     const { isLoading } = this.state;
 
@@ -153,4 +133,52 @@ const styles = StyleSheet.create({
   }
 });
 
-export default Display;
+// export default props => (
+//   <Consumer>
+//     {value => {
+//       return <Display {...props} value={value} />;
+//     }}
+//   </Consumer>
+// );
+
+export default class ContextWrapper extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+
+  static navigationOptions = ({ navigation }) => {
+    return {
+      headerTitle: "Pokemon",
+      headerStyle: {
+        backgroundColor: "#F8EE5F"
+      },
+
+      headerTitleStyle: {
+        fontWeight: "bold",
+        fontSize: 20,
+        color: "white"
+      },
+      headerTintColor: "white",
+      headerRight: (
+        <Button
+          title="Settings"
+          onPress={() => {
+            navigation.navigate("Settings");
+          }}
+        />
+      )
+    };
+  };
+
+  render() {
+    return (
+      <Consumer>
+        {value => {
+          return <Display {...this.props} value={value} />;
+        }}
+      </Consumer>
+    );
+  }
+}
+
+// export default Display;
