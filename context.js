@@ -1,10 +1,13 @@
 import React from "react";
+import { getData, setData } from "./functions/asyncStorage";
+import GenerationRanges from "./assets/GenerationRanges";
 
 export const Context = React.createContext();
 
 const reducer = (state, action) => {
   switch (action.type) {
     case "CHANGE_GENERATION":
+      setData("generation", action.payload);
       return {
         generation: action.payload
       };
@@ -32,9 +35,20 @@ export class Provider extends React.Component {
     };
   }
 
-  // check async storage to see if theres a saved file
-  // if its there grab the data and replace the default
-  componentDidMount() {}
+  async componentDidMount() {
+    const data = await getData("generation");
+
+    if (data !== null) {
+      const generationData = GenerationRanges.find(currentGeneration => {
+        return currentGeneration.generation === data;
+      });
+      const { generation, endRange, startRange } = generationData;
+
+      this.setState({ generation, endRange, startRange });
+    } else {
+      await setData("generation", "All");
+    }
+  }
 
   render() {
     console.log(this.state);
