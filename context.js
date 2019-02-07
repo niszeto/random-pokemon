@@ -35,19 +35,26 @@ export class Provider extends React.Component {
     };
   }
 
-  async componentDidMount() {
+  checkAsyncStorage = async () => {
     const data = await getData("generation");
 
     if (data !== null) {
-      const generationData = GenerationRanges.find(currentGeneration => {
+      const generationData = await GenerationRanges.find(currentGeneration => {
         return currentGeneration.generation === data;
       });
-      const { generation, endRange, startRange } = generationData;
 
-      this.setState({ generation, endRange, startRange });
+      if (generationData !== undefined) {
+        const { generation, endRange, startRange } = generationData;
+
+        this.setState({ generation, endRange, startRange });
+      }
     } else {
       await setData("generation", "All");
     }
+  };
+
+  componentDidMount() {
+    this.checkAsyncStorage();
   }
 
   render() {
