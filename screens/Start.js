@@ -1,5 +1,7 @@
 import React from "react";
-import { StyleSheet, View, Image, SafeAreaView } from "react-native";
+import { StyleSheet, View, SafeAreaView } from "react-native";
+
+import questionMark from "../assets/question-mark.png";
 
 import Circles from "../components/start/Circles";
 import Screen from "../components/start/Screen";
@@ -13,7 +15,7 @@ const Start = props => {
       </View>
 
       <View style={styles.mainContentContainer}>
-        <Screen />
+        <Screen source={questionMark} />
       </View>
 
       <View style={styles.footerContainer}>

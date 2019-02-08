@@ -25,13 +25,26 @@ const styles = StyleSheet.create({
   container: {
     flexDirection: "row",
     justifyContent: "center",
-    alignItems: "center"
+    alignItems: "center",
+    borderRadius: 5,
+    borderWidth: 3,
+    backgroundColor: "red",
+    padding: 5
   },
+
   textContainer: {
     margin: 5,
-    backgroundColor: "blue"
+    justifyContent: "center",
+    alignItems: "center",
+    borderRadius: 5,
+    borderWidth: 3,
+    backgroundColor: "blue",
+    padding: 5
   },
-  textStyle: {}
+  textStyle: {
+    color: "white",
+    fontSize: 25
+  }
 });
 
 export default Types;

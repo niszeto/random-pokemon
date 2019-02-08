@@ -72,15 +72,15 @@ class Display extends React.Component {
       >
         <View style={styles.headerContainer}>
           <Name name={name} />
+        </View>
+
+        <View style={styles.numberAndTypesContainer}>
           <PokedexNumber number={id} />
+          <Types types={types.reverse()} />
         </View>
 
         <View style={styles.spriteContainer}>
           <Sprite sprite={front_default} />
-        </View>
-
-        <View style={styles.typesStyle}>
-          <Types types={types.reverse()} />
         </View>
 
         <View style={styles.typesStyle}>
@@ -105,18 +105,22 @@ class Display extends React.Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    // justifyContent: "center",
-    // alignItems: "center",
     width: "100%"
   },
 
   headerContainer: {
     height: 100,
     width: "100%",
-    flexDirection: "row",
-    justifyContent: "space-around",
+    justifyContent: "center",
     alignItems: "center",
     backgroundColor: "yellow"
+  },
+
+  numberAndTypesContainer: {
+    flexDirection: "row",
+    justifyContent: "space-evenly",
+    alignItems: "center",
+    height: 100
   },
 
   spriteContainer: {
@@ -133,14 +137,6 @@ const styles = StyleSheet.create({
   }
 });
 
-// export default props => (
-//   <Consumer>
-//     {value => {
-//       return <Display {...props} value={value} />;
-//     }}
-//   </Consumer>
-// );
-
 export default class ContextWrapper extends React.Component {
   constructor(props) {
     super(props);
@@ -150,7 +146,7 @@ export default class ContextWrapper extends React.Component {
     return {
       headerTitle: "Pokemon",
       headerStyle: {
-        backgroundColor: "#F8EE5F"
+        backgroundColor: "#FF373D"
       },
 
       headerTitleStyle: {
@@ -180,5 +176,3 @@ export default class ContextWrapper extends React.Component {
     );
   }
 }
-
-// export default Display;

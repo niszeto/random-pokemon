@@ -12,7 +12,7 @@ const ApplicationStack = createStackNavigator(
       title: "Pokemon",
 
       headerStyle: {
-        backgroundColor: "#F8EE5F"
+        backgroundColor: "#FF373D"
       },
 
       headerTitleStyle: {

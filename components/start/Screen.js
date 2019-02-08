@@ -1,12 +1,11 @@
 import React from "react";
 import { StyleSheet, View, Image, Text } from "react-native";
 
-import questionMark from "../../assets/question-mark.png";
-
 const Screen = props => {
+  const { source } = props;
   return (
     <View style={styles.screenContainer}>
-      <Image source={questionMark} style={styles.imageStyle} />
+      <Image source={source} style={styles.imageStyle} />
       <Text style={styles.textStyle}>Who's That Pokemon?</Text>
     </View>
   );

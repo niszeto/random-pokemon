@@ -6,18 +6,39 @@ const Name = props => {
 
   return (
     <View style={styles.container}>
-      <Text style={styles.textStyle}>{name}</Text>
+      <View style={styles.textContainer}>
+        <Text style={styles.textStyle}>{name}</Text>
+      </View>
     </View>
   );
 };
 
 const styles = StyleSheet.create({
   container: {
+    height: "85%",
+    width: "95%",
+    justifyContent: "center",
+    alignItems: "center",
+    borderRadius: 10,
+    borderWidth: 5,
+    borderColor: "black",
     backgroundColor: "blue"
   },
 
+  textContainer: {
+    height: "85%",
+    width: "95%",
+    justifyContent: "center",
+    alignItems: "center",
+    borderRadius: 10,
+    borderWidth: 5,
+    borderColor: "black",
+    backgroundColor: "red"
+  },
+
   textStyle: {
-    fontSize: 50
+    fontSize: 35,
+    fontWeight: "bold"
   }
 });
 
