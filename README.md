@@ -15,6 +15,8 @@
 - Type the command "npm start" in terminal to start running the mobile app
 - Type "i" for ios simulator or "a" for android simulator in terminal or open Expo app on mobile device and scan QR code on Expo CLI
 
+### [Demo - Try it on Expo](https://expo.io/@niszeto/random-pokemon)
+
 ## Screenshots:
 
 <div style={{display: flex; flex-direction: row}}>
