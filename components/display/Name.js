@@ -2,15 +2,58 @@ import React from "react";
 import { View, Text, StyleSheet } from "react-native";
 
 const Name = props => {
-  const { name } = props;
+  const { name, mainType } = props;
 
   return (
-    <View style={styles.container}>
+    <View style={getTypeColor(mainType)}>
       <View style={styles.textContainer}>
         <Text style={styles.textStyle}>{name}</Text>
       </View>
     </View>
   );
+};
+
+const getTypeColor = type => {
+  switch (type) {
+    case "normal":
+      return styles.normalContainer;
+    case "fire":
+      return styles.fireContainer;
+    case "water":
+      return styles.waterContainer;
+    case "grass":
+      return styles.grassContainer;
+    case "electric":
+      return styles.electricContainer;
+    case "ice":
+      return styles.iceContainer;
+    case "fighting":
+      return styles.fightingContainer;
+    case "poison":
+      return styles.poisonContainer;
+    case "ground":
+      return styles.groundContainer;
+    case "flying":
+      return styles.flyingContainer;
+    case "psychic":
+      return styles.psychicContainer;
+    case "bug":
+      return styles.bugContainer;
+    case "rock":
+      return styles.rockContainer;
+    case "ghost":
+      return styles.ghostContainer;
+    case "dragon":
+      return styles.dragonContainer;
+    case "dark":
+      return styles.darkContainer;
+    case "steel":
+      return styles.steelContainer;
+    case "fairy":
+      return styles.fairyContainer;
+    default:
+      return styles.container;
+  }
 };
 
 const styles = StyleSheet.create({
@@ -26,13 +69,13 @@ const styles = StyleSheet.create({
   },
 
   textContainer: {
-    height: "85%",
-    width: "95%",
-    justifyContent: "center",
-    alignItems: "center",
+    // height: "85%",
+    // width: "95%",
+    // justifyContent: "center",
+    // alignItems: "center"
     // borderRadius: 10,
     // borderWidth: 3,
-    borderColor: "black"
+    // borderColor: "black"
     // backgroundColor: "#01FFFF"
   },
 
@@ -42,58 +85,166 @@ const styles = StyleSheet.create({
   },
 
   normalContainer: {
-    backgroundColor: "#A8A878"
+    height: "85%",
+    width: "95%",
+    justifyContent: "center",
+    alignItems: "center",
+    borderRadius: 10,
+    borderWidth: 3,
+    backgroundColor: "#707048"
   },
   fireContainer: {
-    backgroundColor: "#F08030"
+    height: "85%",
+    width: "95%",
+    justifyContent: "center",
+    alignItems: "center",
+    borderRadius: 10,
+    borderWidth: 3,
+    backgroundColor: "#AB4F0D"
   },
   waterContainer: {
-    backgroundColor: "#6890F0"
+    height: "85%",
+    width: "95%",
+    justifyContent: "center",
+    alignItems: "center",
+    borderRadius: 10,
+    borderWidth: 3,
+    backgroundColor: "#144BCC"
   },
   grassContainer: {
-    backgroundColor: "#78C850"
+    height: "85%",
+    width: "95%",
+    justifyContent: "center",
+    alignItems: "center",
+    borderRadius: 10,
+    borderWidth: 3,
+    backgroundColor: "#4C8C2C"
   },
   electricContainer: {
-    backgroundColor: "#F8D030"
+    height: "85%",
+    width: "95%",
+    justifyContent: "center",
+    alignItems: "center",
+    borderRadius: 10,
+    borderWidth: 3,
+    backgroundColor: "#BB9707"
   },
   iceContainer: {
-    backgroundColor: "#98D8D8"
+    height: "85%",
+    width: "95%",
+    justifyContent: "center",
+    alignItems: "center",
+    borderRadius: 10,
+    borderWidth: 3,
+    backgroundColor: "#42AEAE"
   },
   fightingContainer: {
-    backgroundColor: "#C03028"
+    height: "85%",
+    width: "95%",
+    justifyContent: "center",
+    alignItems: "center",
+    borderRadius: 10,
+    borderWidth: 3,
+    backgroundColor: "#7B1E19"
   },
   poisonContainer: {
-    backgroundColor: "#A040A0"
+    height: "85%",
+    width: "95%",
+    justifyContent: "center",
+    alignItems: "center",
+    borderRadius: 10,
+    borderWidth: 3,
+    backgroundColor: "#6A2A6A"
   },
   groundContainer: {
-    backgroundColor: "#E0C068"
+    height: "85%",
+    width: "95%",
+    justifyContent: "center",
+    alignItems: "center",
+    borderRadius: 10,
+    borderWidth: 3,
+    backgroundColor: "#B28C24"
   },
   flyingContainer: {
-    backgroundColor: "#A890F0"
+    height: "85%",
+    width: "95%",
+    justifyContent: "center",
+    alignItems: "center",
+    borderRadius: 10,
+    borderWidth: 3,
+    backgroundColor: "#4D1EDC"
   },
   psychicContainer: {
-    backgroundColor: "#F85888"
+    height: "85%",
+    width: "95%",
+    justifyContent: "center",
+    alignItems: "center",
+    borderRadius: 10,
+    borderWidth: 3,
+    backgroundColor: "#D30945"
   },
   bugContainer: {
-    backgroundColor: "#A8B820"
+    height: "85%",
+    width: "95%",
+    justifyContent: "center",
+    alignItems: "center",
+    borderRadius: 10,
+    borderWidth: 3,
+    backgroundColor: "#6B7515"
   },
   rockContainer: {
-    backgroundColor: "#B8A038"
+    height: "85%",
+    width: "95%",
+    justifyContent: "center",
+    alignItems: "center",
+    borderRadius: 10,
+    borderWidth: 3,
+    backgroundColor: "#796A25"
   },
   ghostContainer: {
-    backgroundColor: "#705898"
+    height: "85%",
+    width: "95%",
+    justifyContent: "center",
+    alignItems: "center",
+    borderRadius: 10,
+    borderWidth: 3,
+    backgroundColor: "#4A3A64"
   },
   dragonContainer: {
-    backgroundColor: "#7038F8"
+    height: "85%",
+    width: "95%",
+    justifyContent: "center",
+    alignItems: "center",
+    borderRadius: 10,
+    borderWidth: 3,
+    backgroundColor: "#3E07C0"
   },
   darkContainer: {
-    backgroundColor: "#705848"
+    height: "85%",
+    width: "95%",
+    justifyContent: "center",
+    alignItems: "center",
+    borderRadius: 10,
+    borderWidth: 3,
+    backgroundColor: "#48382E"
   },
   steelContainer: {
-    backgroundColor: "#B8B8D0"
+    height: "85%",
+    width: "95%",
+    justifyContent: "center",
+    alignItems: "center",
+    borderRadius: 10,
+    borderWidth: 3,
+    backgroundColor: "#666699"
   },
   fairyContainer: {
-    backgroundColor: "#EE99AC"
+    height: "85%",
+    width: "95%",
+    justifyContent: "center",
+    alignItems: "center",
+    borderRadius: 10,
+    borderWidth: 3,
+    backgroundColor: "#DA254C"
   }
 });
 

@@ -124,7 +124,7 @@ class Display extends React.Component {
         }
       >
         <View style={styles.bannerContainer}>
-          <Name name={name} />
+          <Name name={name} mainType={mainType} />
         </View>
 
         <View style={styles.numberAndTypesContainer}>
