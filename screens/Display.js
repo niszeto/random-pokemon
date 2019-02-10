@@ -48,6 +48,57 @@ class Display extends React.Component {
     this.setState({ isLoading: false, data: pokemonData });
   };
 
+  getTypeColor = type => {
+    switch (type) {
+      case "normal":
+        return styles.normalContainer;
+      case "fire":
+        return styles.fireContainer;
+      case "water":
+        return styles.waterContainer;
+      case "grass":
+        return styles.grassContainer;
+      case "electric":
+        return styles.electricContainer;
+      case "ice":
+        return styles.iceContainer;
+      case "fighting":
+        return styles.fightingContainer;
+      case "poison":
+        return styles.poisonContainer;
+      case "ground":
+        return styles.groundContainer;
+      case "flying":
+        return styles.flyingContainer;
+      case "psychic":
+        return styles.psychicContainer;
+      case "bug":
+        return styles.bugContainer;
+      case "rock":
+        return styles.rockContainer;
+      case "ghost":
+        return styles.ghostContainer;
+      case "dragon":
+        return styles.dragonContainer;
+      case "dark":
+        return styles.darkContainer;
+      case "steel":
+        return styles.steelContainer;
+      case "fairy":
+        return styles.fairyContainer;
+      default:
+        return styles.container;
+    }
+  };
+
+  getMainType = types => {
+    const {
+      type: { name }
+    } = types[0];
+
+    return name;
+  };
+
   displayData = () => {
     const {
       name,
@@ -60,11 +111,11 @@ class Display extends React.Component {
       stats
     } = this.state.data;
 
-    console.log(types.reverse()[0]);
+    let mainType = this.getMainType(types.reverse());
 
     return (
       <ScrollView
-        contentContainerStyle={styles.container}
+        contentContainerStyle={this.getTypeColor(mainType)}
         refreshControl={
           <RefreshControl
             refreshing={this.state.isLoading}
@@ -72,27 +123,27 @@ class Display extends React.Component {
           />
         }
       >
-        <View style={styles.headerContainer}>
+        <View style={styles.bannerContainer}>
           <Name name={name} />
         </View>
 
         <View style={styles.numberAndTypesContainer}>
           <PokedexNumber number={id} />
-          <Types types={types.reverse()} />
+          <Types types={types} />
         </View>
 
         <View style={styles.spriteContainer}>
           <Sprite sprite={front_default} />
         </View>
 
-        <View style={styles.typesStyle}>
+        {/* <View style={styles.typesStyle}>
           <Abilities abilities={abilities.reverse()} />
         </View>
 
         <View style={styles.typesStyle}>
           <Weight weight={weight} />
           <Height height={height} />
-        </View>
+        </View> */}
       </ScrollView>
     );
   };
@@ -100,18 +151,76 @@ class Display extends React.Component {
   render() {
     const { isLoading } = this.state;
 
-    return isLoading ? Loading() : this.displayData();
+    return (
+      <View style={styles.container}>
+        {isLoading ? Loading() : this.displayData()}
+      </View>
+    );
   }
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    width: "100%",
-    backgroundColor: "#EEEEEE"
+    backgroundColor: "#FF373D"
   },
 
-  headerContainer: {
+  normalContainer: {
+    backgroundColor: "#A8A878"
+  },
+  fireContainer: {
+    backgroundColor: "#F08030"
+  },
+  waterContainer: {
+    backgroundColor: "#6890F0"
+  },
+  grassContainer: {
+    backgroundColor: "#78C850"
+  },
+  electricContainer: {
+    backgroundColor: "#F8D030"
+  },
+  iceContainer: {
+    backgroundColor: "#98D8D8"
+  },
+  fightingContainer: {
+    backgroundColor: "#C03028"
+  },
+  poisonContainer: {
+    backgroundColor: "#A040A0"
+  },
+  groundContainer: {
+    backgroundColor: "#E0C068"
+  },
+  flyingContainer: {
+    backgroundColor: "#A890F0"
+  },
+  psychicContainer: {
+    backgroundColor: "#F85888"
+  },
+  bugContainer: {
+    backgroundColor: "#A8B820"
+  },
+  rockContainer: {
+    backgroundColor: "#B8A038"
+  },
+  ghostContainer: {
+    backgroundColor: "#705898"
+  },
+  dragonContainer: {
+    backgroundColor: "#7038F8"
+  },
+  darkContainer: {
+    backgroundColor: "#705848"
+  },
+  steelContainer: {
+    backgroundColor: "#B8B8D0"
+  },
+  fairyContainer: {
+    backgroundColor: "#EE99AC"
+  },
+
+  bannerContainer: {
     height: 100,
     width: "100%",
     justifyContent: "center",
