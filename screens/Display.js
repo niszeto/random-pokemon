@@ -140,10 +140,10 @@ class Display extends React.Component {
           <Abilities abilities={abilities} />
         </View>
 
-        {/* <View style={styles.typesStyle}>
+        <View style={styles.typesStyle}>
           <Weight weight={weight} />
           <Height height={height} />
-        </View> */}
+        </View>
       </ScrollView>
     );
   };
@@ -256,12 +256,10 @@ const styles = StyleSheet.create({
   spriteContainer: {
     justifyContent: "center",
     alignItems: "center"
-    // backgroundColor: "blue"
   },
 
   typesStyle: {
     height: 75,
-    // width: "100%",
     flexDirection: "row",
     justifyContent: "space-evenly",
     alignItems: "center",

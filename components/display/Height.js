@@ -6,7 +6,7 @@ const Height = props => {
 
   return (
     <View>
-      <Text>{`${height} decimetres`}</Text>
+      <Text>{`${height / 10} meters`}</Text>
     </View>
   );
 };

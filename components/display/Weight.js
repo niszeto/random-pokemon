@@ -6,7 +6,7 @@ const Weight = props => {
 
   return (
     <View>
-      <Text>{`${weight} hectograms`}</Text>
+      <Text>{`${weight / 10} kilograms`}</Text>
     </View>
   );
 };
