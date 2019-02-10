@@ -39,11 +39,9 @@ export class Provider extends React.Component {
     const data = await getData("generation");
 
     if (data !== null) {
-      const generationData = await GenerationRanges.filter(
-        currentGeneration => {
-          return currentGeneration.generation !== data;
-        }
-      );
+      const generationData = await GenerationRanges.find(currentGeneration => {
+        return currentGeneration.generation === data;
+      });
 
       if (generationData !== undefined) {
         const { generation, endRange, startRange } = generationData;

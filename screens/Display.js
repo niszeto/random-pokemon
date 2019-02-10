@@ -60,7 +60,7 @@ class Display extends React.Component {
       stats
     } = this.state.data;
 
-    // console.log(types);
+    console.log(types.reverse()[0]);
 
     return (
       <ScrollView
