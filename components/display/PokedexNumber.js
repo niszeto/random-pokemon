@@ -13,7 +13,7 @@ const PokedexNumber = props => {
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: "red",
+    backgroundColor: "#FFFEFD",
     justifyContent: "center",
     alignItems: "center",
     height: 80,

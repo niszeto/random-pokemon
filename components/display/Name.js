@@ -20,9 +20,9 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
     borderRadius: 10,
-    borderWidth: 5,
+    borderWidth: 3,
     borderColor: "black",
-    backgroundColor: "blue"
+    backgroundColor: "#F5F8F3"
   },
 
   textContainer: {
@@ -31,9 +31,9 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
     borderRadius: 10,
-    borderWidth: 5,
+    borderWidth: 3,
     borderColor: "black",
-    backgroundColor: "red"
+    backgroundColor: "#01FFFF"
   },
 
   textStyle: {

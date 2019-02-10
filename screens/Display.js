@@ -60,6 +60,8 @@ class Display extends React.Component {
       stats
     } = this.state.data;
 
+    console.log(types);
+
     return (
       <ScrollView
         contentContainerStyle={styles.container}
@@ -105,15 +107,16 @@ class Display extends React.Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    width: "100%"
+    width: "100%",
+    backgroundColor: "#EEEEEE"
   },
 
   headerContainer: {
     height: 100,
     width: "100%",
     justifyContent: "center",
-    alignItems: "center",
-    backgroundColor: "yellow"
+    alignItems: "center"
+    // backgroundColor: "yellow"
   },
 
   numberAndTypesContainer: {
@@ -124,7 +127,9 @@ const styles = StyleSheet.create({
   },
 
   spriteContainer: {
+    justifyContent: "center",
     alignItems: "center"
+    // backgroundColor: "blue"
   },
 
   typesStyle: {
