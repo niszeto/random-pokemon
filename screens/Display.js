@@ -136,11 +136,11 @@ class Display extends React.Component {
           <Sprite sprite={front_default} />
         </View>
 
-        {/* <View style={styles.typesStyle}>
-          <Abilities abilities={abilities.reverse()} />
+        <View style={styles.typesStyle}>
+          <Abilities abilities={abilities} />
         </View>
 
-        <View style={styles.typesStyle}>
+        {/* <View style={styles.typesStyle}>
           <Weight weight={weight} />
           <Height height={height} />
         </View> */}
@@ -166,57 +166,75 @@ const styles = StyleSheet.create({
   },
 
   normalContainer: {
+    flex: 1,
     backgroundColor: "#A8A878"
   },
   fireContainer: {
+    flex: 1,
     backgroundColor: "#F08030"
   },
   waterContainer: {
+    flex: 1,
     backgroundColor: "#6890F0"
   },
   grassContainer: {
+    flex: 1,
     backgroundColor: "#78C850"
   },
   electricContainer: {
+    flex: 1,
     backgroundColor: "#F8D030"
   },
   iceContainer: {
+    flex: 1,
     backgroundColor: "#98D8D8"
   },
   fightingContainer: {
+    flex: 1,
     backgroundColor: "#C03028"
   },
   poisonContainer: {
+    flex: 1,
     backgroundColor: "#A040A0"
   },
   groundContainer: {
+    flex: 1,
     backgroundColor: "#E0C068"
   },
   flyingContainer: {
+    flex: 1,
     backgroundColor: "#A890F0"
   },
   psychicContainer: {
+    flex: 1,
     backgroundColor: "#F85888"
   },
   bugContainer: {
+    flex: 1,
     backgroundColor: "#A8B820"
   },
   rockContainer: {
+    flex: 1,
     backgroundColor: "#B8A038"
   },
   ghostContainer: {
+    flex: 1,
     backgroundColor: "#705898"
   },
   dragonContainer: {
+    flex: 1,
     backgroundColor: "#7038F8"
   },
   darkContainer: {
+    flex: 1,
     backgroundColor: "#705848"
   },
   steelContainer: {
+    flex: 1,
     backgroundColor: "#B8B8D0"
   },
   fairyContainer: {
+    flex: 1,
     backgroundColor: "#EE99AC"
   },
 
@@ -242,12 +260,12 @@ const styles = StyleSheet.create({
   },
 
   typesStyle: {
-    height: 50,
-    width: "100%",
+    height: 75,
+    // width: "100%",
     flexDirection: "row",
     justifyContent: "space-around",
-    alignItems: "center",
-    backgroundColor: "yellow"
+    alignItems: "center"
+    // backgroundColor: "yellow"
   }
 });
 

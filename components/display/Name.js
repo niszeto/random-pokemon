@@ -81,7 +81,8 @@ const styles = StyleSheet.create({
 
   textStyle: {
     fontSize: 35,
-    fontWeight: "bold"
+    fontWeight: "bold",
+    color: "white"
   },
 
   normalContainer: {
