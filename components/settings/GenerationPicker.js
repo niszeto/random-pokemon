@@ -23,7 +23,8 @@ class GenerationPicker extends React.Component {
           return (
             <Picker
               selectedValue={generation}
-              style={{ height: 300, width: "100%", backgroundColor: "red" }}
+              style={styles.container}
+              prompt="Select the Generation"
               onValueChange={(itemValue, itemIndex) => {
                 const generationInformation = GenerationRanges[itemIndex];
                 const {
@@ -45,5 +46,13 @@ class GenerationPicker extends React.Component {
     );
   }
 }
+
+const styles = StyleSheet.create({
+  container: {
+    // height: "30%",
+    width: "100%"
+    // backgroundColor: "red"
+  }
+});
 
 export default GenerationPicker;

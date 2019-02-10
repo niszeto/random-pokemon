@@ -13,7 +13,7 @@ class Settings extends React.Component {
     return {
       headerTitle: "Settings",
       headerStyle: {
-        backgroundColor: "#F8EE5F"
+        backgroundColor: "#FF373D"
       },
 
       headerTitleStyle: {
@@ -34,11 +34,13 @@ class Settings extends React.Component {
     };
   };
 
-  componentDidMount() {}
-
   render() {
     return (
       <View style={styles.container}>
+        <View style={styles.textContainer}>
+          <Text style={styles.textStyle}>Select the Generation</Text>
+        </View>
+
         <GenerationPicker />
       </View>
     );
@@ -47,9 +49,21 @@ class Settings extends React.Component {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1
+    flex: 1,
     // justifyContent: "center",
-    // alignItems: "center"
+    alignItems: "center"
+    // backgroundColor: "#F8EE5F"
+  },
+
+  textContainer: {
+    margin: 5,
+    padding: 5
+  },
+
+  textStyle: {
+    fontSize: 30,
+    fontWeight: "bold",
+    textDecorationLine: "underline"
   }
 });
 
