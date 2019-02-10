@@ -240,7 +240,7 @@ const styles = StyleSheet.create({
 
   bannerContainer: {
     height: 100,
-    width: "100%",
+    // width: "100%",
     justifyContent: "center",
     alignItems: "center"
     // backgroundColor: "yellow"
@@ -263,9 +263,12 @@ const styles = StyleSheet.create({
     height: 75,
     // width: "100%",
     flexDirection: "row",
-    justifyContent: "space-around",
-    alignItems: "center"
-    // backgroundColor: "yellow"
+    justifyContent: "space-evenly",
+    alignItems: "center",
+    margin: 10,
+    borderWidth: 3,
+    borderRadius: 5,
+    backgroundColor: "#EEEEEE"
   }
 });
 

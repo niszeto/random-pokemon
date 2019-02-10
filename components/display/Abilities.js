@@ -28,7 +28,7 @@ const displayRegularAbility = (name, slot) => {
 const displayHiddenAbility = (name, slot) => {
   return (
     <View style={styles.textContainer} key={slot}>
-      <Text style={styles.textStyle}>Hidden Ability</Text>
+      <Text style={styles.hiddenAbilityTextStyle}>Hidden Ability</Text>
       <Text style={styles.textStyle}>{name}</Text>
     </View>
   );
@@ -37,16 +37,25 @@ const displayHiddenAbility = (name, slot) => {
 const styles = StyleSheet.create({
   container: {
     flexDirection: "row",
-    justifyContent: "center",
+    justifyContent: "space-around",
     alignItems: "center"
   },
   textContainer: {
-    margin: 5,
-    backgroundColor: "blue",
-    justifyContent: "center",
+    margin: 10,
+    padding: 5,
+    justifyContent: "space-evenly",
     alignItems: "center"
   },
-  textStyle: {}
+
+  hiddenAbilityTextStyle: {
+    fontStyle: "italic",
+    fontWeight: "bold",
+    fontSize: 18
+  },
+
+  textStyle: {
+    fontSize: 18
+  }
 });
 
 export default Abilities;
