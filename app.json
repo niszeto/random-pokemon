@@ -24,6 +24,8 @@
     ],
     "ios": {
       "supportsTablet": true
-    }
+    },
+    "description": "An app that displays a random pokemon and its information. The generation of the random range can be changed through the settings.",
+    "githubUrl": "https://github.com/niszeto/random-pokemon"
   }
 }
